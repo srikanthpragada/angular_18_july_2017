@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { CourseComponent } from './course.component';
+import { EventBindComponent } from 'app/directives/event-bind.component';
 
 @NgModule({
   declarations: [
-    CourseComponent
+    EventBindComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [ CourseComponent]
+  bootstrap: [ EventBindComponent]
 })
 export class AppModule { }
