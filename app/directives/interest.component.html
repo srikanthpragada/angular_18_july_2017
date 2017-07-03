@@ -1,0 +1,14 @@
+<h2>Interest Calculation </h2>
+
+Loan Amount <br>
+<input type="text" [(ngModel)]="amount">
+<p></p>
+Interest Rate <br>
+<input type="text" [(ngModel)]="rate">
+<p></p>
+<input type="checkbox">Round
+<p></p>
+<button (click)="calculate()">Calculate </button>
+<button (click)="reset()">Reset </button>
+
+<h3 *ngIf="interest > 0">Interest : {{interest}} </h3>
