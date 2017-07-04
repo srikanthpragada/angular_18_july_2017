@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'st-interest',
   templateUrl: './interest.component.html'
 })
-export class InterestComponent {
+export class InterestComponent implements OnInit {
   amount :number;
   rate : number;
   interest : number;
+
+  ngOnInit() {
+        // code 
+  }
 
   calculate() 
   {

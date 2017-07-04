@@ -1,24 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { InterestComponent } from 'app/directives/interest.component';
-import { EventBindComponent } from 'app/directives/event-bind.component';
 
 import { BracketsPipe } from 'app/directives/brackets.pipe';
+
+import { LoginComponent } from 'app/forms/login.component';
 
 import { PipesDemoComponent } from 'app/directives/pipesdemo.component';
 
 @NgModule({
   declarations: [
-      EventBindComponent, 
-      InterestComponent,
-      PipesDemoComponent,
-      BracketsPipe
+      LoginComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, 
+    FormsModule
   ],
   providers: [],
-  bootstrap: [ PipesDemoComponent ]
+  bootstrap: [ LoginComponent ]
 })
 export class AppModule { }
