@@ -12,7 +12,7 @@ password <br>
              <span *ngIf="pwd.invalid && pwd.dirty">Password is missing </span>
              <span *ngIf="pwd.errors?.minlength">Min length is 4</span>
 <p></p>
-<button>Login</button>
+<button [disabled>="loginForm.invalid">Login</button>
 <div>
 Username Valid : {{uname.valid}}
  <br>
