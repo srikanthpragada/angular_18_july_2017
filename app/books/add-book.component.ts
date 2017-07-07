@@ -4,6 +4,7 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable } from 'RxJS';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/finally';
 
 
 @Component({
@@ -12,6 +13,7 @@ import 'rxjs/add/operator/catch';
 })
 export class AddBookComponent {
     book : Book;
+    done  : boolean = false; 
     added : boolean = false; 
     message : string = "";
 
@@ -21,11 +23,13 @@ export class AddBookComponent {
 
     addBook()  {
          // call service 
+          this.done = false; 
           let headers = new Headers({ 'Content-Type': 'application/json' });
           let options = new RequestOptions({ headers : headers });
           this.added = false; 
           this.http.post("http://test.srikanthpragada.com/api/books", this.book ,options)
             .map( (resp:Response) => {return resp})
+            .finally( () => { this.done = true;})
             .catch(this.handleError)
             .subscribe(result => {
                  console.log("Added Book");

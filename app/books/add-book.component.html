@@ -15,7 +15,7 @@
         <p></p>
         <button [disabled]="bookForm.invalid">Add Book </button>
     </form>
-    <div *ngIf="bookForm.submitted">
+    <div *ngIf="done">
         <h3 *ngIf="added">Book has been added successfully!</h3>
         <h3 *ngIf="!added">Book was not added due to some error!!</h3>
     </div>

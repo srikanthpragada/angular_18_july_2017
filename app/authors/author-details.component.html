@@ -1,0 +1,8 @@
+
+<div *ngIf="author">
+  <h2>{{author.name}}</h2>
+  <h3>{{author.email}}</h3>
+  <img src="../../assets/{{author.imageUrl}}">
+</div>
+
+<button (click)="back()">Back</button>

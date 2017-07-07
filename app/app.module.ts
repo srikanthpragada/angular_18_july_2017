@@ -1,26 +1,54 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { BracketsPipe } from 'app/directives/brackets.pipe';
-import { ReactiveLoginComponent } from 'app/forms/reactive-login.component';
-import { PipesDemoComponent } from 'app/directives/pipesdemo.component';
+import { FormsModule} from '@angular/forms'; 
+import { HttpModule} from '@angular/http'; 
 
-import { BooksComponent } from 'app/http/books.component';
-import { CountriesComponent} from 'app/http/countries.component';
-import { AddBookComponent } from 'app/books/add-book.component';
+import { RouterModule, Routes } from '@angular/router';
+
+import { CountriesComponent } from 'app/countries/countries.component';
+import { CountryDetailsComponent} from 'app/countries/country-details.component';
+
+
+import { AuthorsListComponent } from 'app/authors/authors-list.component';
+import { AuthorDetailsComponent } from 'app/authors/author-details.component';
+import { MenuComponent } from 'app/authors/menu.component';
+
+
+import { MainComponent } from 'app/authors/main.component';
+import { AddAuthorComponent } from 'app/authors/add-author.component';
+import { DeleteAuthorComponent } from 'app/authors/delete-author.component';
+  
+const appRoutes : Routes = [
+  { path: 'add', component: AddAuthorComponent },
+  { path: 'list', component: AuthorsListComponent },
+  { path: 'delete/:id', component: DeleteAuthorComponent },
+  { path: 'details/:id', component:  AuthorDetailsComponent },
+  { path: '',  redirectTo : "/list", pathMatch : 'full' },
+  { path: '**',  redirectTo : "/list", pathMatch : 'full' }
+];
+
 
 @NgModule({
   declarations: [
-      ReactiveLoginComponent, AddBookComponent
+      AuthorsListComponent,
+      AuthorDetailsComponent,
+      MenuComponent, 
+      AddAuthorComponent,
+      MainComponent,
+      DeleteAuthorComponent,
+      CountryDetailsComponent,
+      CountriesComponent
   ],
   imports: [
     BrowserModule, 
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule
+    FormsModule, 
+    HttpModule,  
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [ AddBookComponent ]
+  bootstrap: [ MainComponent, MenuComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+   
+ }

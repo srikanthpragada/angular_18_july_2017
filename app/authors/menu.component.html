@@ -1,0 +1,9 @@
+<div style="background-color:lightgray">
+      <a  [routerLink]="['/list']">Home</a>
+      &nbsp;
+      <a  [routerLink]="['/add']">Add Author</a>
+      &nbsp;
+      <input type="text" #authorid placeholder="Author Id">
+      <button (click)="search(authorid.value)">Go</button>
+</div>
+
