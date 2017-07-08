@@ -16,14 +16,13 @@ export class AuthorDetailsComponent {
   ngOnInit(): void {
     this.route.params.subscribe( params => {
       this.id =  params["id"];
-      this.author = this.getAuthor(params["id"])
+      this.author = this.getAuthor(this.id);
      });
   }
     
 /*
  ngOnInit(): void {
-      // this.id = this.route.snapshot.params["id"];
-      this.route.paramMap
+      this.id = this.route.snapshot.params["id"];
       this.author = this.getAuthor(this.id);
   }
 
@@ -31,23 +30,17 @@ export class AuthorDetailsComponent {
 
   getAuthor(id : number) : Author
   {
-    // console.log("Route id : " + id);
+    
     for (var a of Author.getAuthors()) {
       if (a.id == id) {
         return a;
       }
     }
+    // not found
+    this.router.navigate( ['list']);
   }
 
-  next() {
-    console.log("About to go to next author");
-    
-    this.router.navigate( ['details', + this.id + 1])
-        .catch(error=> console.log(error))
-        .then( e => console.log("Next Done " + e));
-    // this.router.navigate( ["list"]);
-  }
-
+ 
    back() {
     
     this.router.navigate( ['list']);

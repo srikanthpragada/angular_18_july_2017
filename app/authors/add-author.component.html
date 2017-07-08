@@ -1,14 +1,14 @@
 <h1>Add New Author </h1>
-<form (ngSubmit)="addAuthor(imageFile)" #form="ngForm">
+<form (ngSubmit)="addAuthor()" #form="ngForm">
     Author Id <br>
-    <input type="text" name="id" [(ngModel)]="id">
+    <input type="text" name="id" [(ngModel)]="id" required>
     <p></p>
     Author Name <br>
-    <input type="text" name="name" [(ngModel)]="name">
+    <input type="text" name="name" [(ngModel)]="name" required>
     <p></p>
     Email Address <br>
-    <input type="text" name="email" [(ngModel)]="email">
+    <input type="text" name="email" [(ngModel)]="email" required>
     <p></p>
-    <button>Add Author</button>
+    <button [disabled]= "form.invalid"> Add Author</button>
     <button (click)="cancel()">Cancel </button>
 </form>

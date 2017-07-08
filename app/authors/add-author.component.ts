@@ -10,10 +10,10 @@ export class AddAuthorComponent {
     id : string; 
 
     constructor(private router : Router) {
-      
+         
     }
 
-    addAuthor(file) {
+    addAuthor() {
         let author = new Author(parseInt(this.id), this.name, this.email, this.name + ".jpg");
         Author.getAuthors().push(author);
         alert("Added New Author Successfully!");
