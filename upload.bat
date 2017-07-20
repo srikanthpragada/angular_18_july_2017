@@ -1,3 +1,3 @@
 git add .
 git commit -m %1
-git push angular_27_june_2017 master
+git push angular_18_july_2017 master
