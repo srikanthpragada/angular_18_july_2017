@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular';
+
+  convertToUpper() : void  {
+      this.title = this.title.toUpperCase();
+  }
+
+  changeTitle(newTitle :string) : void  {
+      console.log(newTitle);
+      this.title = newTitle;
+  }
 }
+
+ 

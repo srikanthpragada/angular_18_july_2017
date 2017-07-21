@@ -1,7 +1,12 @@
   <h1>
     Welcome {{title}}!
   </h1>
+  <input  #newTitle type="text"> 
+  <button (click)="changeTitle(newTitle.value)" >Change</button>
+  <p></p>
+  <button (click)="convertToUpper()" >Upper </button>
 
   
   
+
 

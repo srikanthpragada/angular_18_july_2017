@@ -1,0 +1,15 @@
+<h2>{{title}}</h2>
+
+<ul>
+    <li *ngFor="let topic of topics"> {{topic}} </li>
+</ul>    
+
+<input type="text" placeholder="New Topic" #newTopic>
+<button (click)="addTopic(newTopic.value)">Add </button>
+
+<!--
+<h2>Books</h2>
+
+<books-list></books-list>
+
+-->
