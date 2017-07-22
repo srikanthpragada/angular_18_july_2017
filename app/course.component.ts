@@ -6,6 +6,7 @@ import { Component} from '@angular/core';
 })
 export class CourseComponent {
     title : string = "Angular 4";
+    type : string = "o";
     topics : string[] = ["Data Binding","Forms", "Http","Routing"];
     
     addTopic(newTopic :string) : void 

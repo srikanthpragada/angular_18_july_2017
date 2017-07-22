@@ -1,15 +1,31 @@
-<h2>{{title}}</h2>
+<style>
+ .red { color : red}
+ .big { font-size :30pt}
+</style>
 
-<ul>
-    <li *ngFor="let topic of topics"> {{topic}} </li>
-</ul>    
+<h2>{{title}}</h2>
+<div *ngFor="let topic of topics; let i = index; let first= first; let oddRow = odd">
+        <h2 *ngIf="first">List Of Topics</h2>
+        <span [class.red]="oddRow">
+             {{i + 1}}.{{topic}} 
+        </span>    
+</div>
+
 
 <input type="text" placeholder="New Topic" #newTopic>
 <button (click)="addTopic(newTopic.value)">Add </button>
 
-<!--
-<h2>Books</h2>
+<h2 [ngSwitch]="type">
+      <span *ngSwitchCase="'o'">Online </span>
+      <span *ngSwitchCase="'c'">Classroom </span>
+      <span *ngSwitchDefault>Online and Classroom </span>
+</h2>    
 
-<books-list></books-list>
+<p></p>
+<input  type="checkbox" #red>Red 
+<input  type="checkbox" #bold>Bold 
+<p></p>
 
--->
+<div [ngClass]='{"red": red.checked, "big" : bold.checked}'>Books</div>
+
+
