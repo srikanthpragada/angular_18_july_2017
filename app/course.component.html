@@ -22,8 +22,8 @@
 </h2>    
 
 <p></p>
-<input  type="checkbox" #red>Red 
-<input  type="checkbox" #bold>Bold 
+<input (click)="1==1" type="checkbox" #red>Red 
+<input (click)="1==1" type="checkbox" #bold>Bold 
 <p></p>
 
 <div [ngClass]='{"red": red.checked, "big" : bold.checked}'>Books</div>
