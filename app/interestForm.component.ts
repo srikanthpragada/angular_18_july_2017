@@ -26,7 +26,8 @@ export class InterestFormComponent {
   }
 
   round() {
-      this.calculate(); 
+      this.isRound = !this.isRound;
+      this.calculate();
   }
 
 }

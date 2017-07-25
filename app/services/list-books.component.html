@@ -1,0 +1,14 @@
+<h1>Books List </h1>
+
+<table border="1" width="100%">
+    <tr><th>Title</th> <th>Author </th><th>Price</th>
+    <tr *ngFor="let b of books">
+           <td> {{b.title}} </td>
+           <td> {{b.author}} </td>
+           <td> {{b.price}} </td>
+    </tr>
+</table>    
+
+<div *ngFor="let b of books">
+       <book-details [book]="b"></book-details>
+</div>
