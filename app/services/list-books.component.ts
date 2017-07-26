@@ -14,5 +14,7 @@ export class ListBooksComponent {
         this.books = this.booksService.getBooks();  // 4
     }
    
-    
+    deleteBook(id : number) {
+        console.log("Deleting book : " + id);
+    }
 }

@@ -10,5 +10,5 @@
 </table>    
 
 <div *ngFor="let b of books">
-       <book-details [book]="b"></book-details>
+       <book-details [book]="b"  (delete)="deleteBook($event)" ></book-details>
 </div>
