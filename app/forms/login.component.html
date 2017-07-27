@@ -6,10 +6,11 @@
 </style>
 <form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
     <label for="uname">Username </label> <br>
-    <input type="text" #uname="ngModel" [(ngModel)]="username" name="uname" minlength="6" required>
+    <input type="text" #uname="ngModel" [(ngModel)]="username" 
+                  name="uname" minlength="6" required>
     <span *ngIf="uname.dirty && uname.errors">
            <span *ngIf="uname.errors.required">Username is required! </span>
-    <span *ngIf="uname.errors.minlength">
+           <span *ngIf="uname.errors.minlength">
                   Username must be at least {{ uname.errors.minlength.requiredLength}} chars
            </span> {{ uname.errors | json}}
     </span>

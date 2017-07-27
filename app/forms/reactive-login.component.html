@@ -1,0 +1,41 @@
+<html>
+
+<body>
+    <h2>Login</h2>
+    <form (ngSubmit)="login()" [formGroup]="loginForm">
+        <label for="username">Username</label> <br>
+        <input type="text" id="username" formControlName="username">
+        <span *ngIf="loginForm.controls.username.errors && isSubmitted">
+            <span *ngIf="loginForm.controls.username.errors.required">
+              Username must be entered! </span>
+             <span *ngIf="loginForm.controls.username.errors.minlength">
+              Username must be >=  4 chars
+              </span>
+              {{ loginForm.controls.username.errors | json}}
+        </span>
+        <p></p>
+        <label for="password">Password </label> <br>
+        <input type="password" id="password" formControlName="password">
+         <span *ngIf="loginForm.controls.password.errors && isSubmitted">
+            <span *ngIf="loginForm.controls.password.errors?.required">
+              Password must be entered!
+            </span>
+             <span *ngIf="loginForm.controls.password.errors?.mustHaveStar">
+                     Password must have a star (*)
+            </span>
+             {{ loginForm.controls.password.errors | json}}
+         </span>
+        <p></p>
+        <div *ngIf="loginForm.errors?.misMatch && isSubmitted">Password and username cannot be same</div>
+        <button>Login</button>
+        <p></p>
+        {{ loginForm.errors | json }}
+    <p></p>
+    Submitted : {{ isSubmitted }}
+
+    </form>
+
+
+</body>
+
+</html>
