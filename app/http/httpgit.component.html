@@ -1,0 +1,23 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Git User Details</h1>
+    Git User Id : <input type="text" #username>
+    <button (click)="getDetails(username.value)">Get Details</button>
+    <img *ngIf="isLoading" src="assets/ajaxicon.gif">
+
+    <div *ngIf="user">
+        <h2>{{user.name }} </h2>
+        <h3>{{user.company }} </h3>
+        <img *ngIf="user.avatar_url" [src]="user.avatar_url">
+    </div>
+
+    <h4>{{message}} </h4>
+
+</body>
+
+</html>
