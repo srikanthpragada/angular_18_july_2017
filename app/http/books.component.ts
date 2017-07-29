@@ -17,9 +17,7 @@ export class BooksComponent implements OnInit{
     }
 
     ngOnInit() {
-        this.http.get("/assets/books.json")
-            .toPromise()
-            .then(resp => this.books = <Book[]> resp.json())
+        
 
     }
 

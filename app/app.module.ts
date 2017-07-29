@@ -1,30 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';  
+
+import { RouterModule, Routes} from '@angular/router';  
+
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ListBooksComponent} from "app/services/list-books.component";
-import { BookDetailsComponent} from "app/services/book-details.component";
-import { LoginComponent} from "app/forms/login.component";
-import { ReactiveLoginComponent} from "app/forms/reactive-login.component";
-import { BooksComponent} from "app/http/books.component";
-import { Books2Component} from "app/http/books2.component";
-import { HttpGitComponent} from "app/http/httpgit.component";
+import { MainComponent } from 'app/routing/main.component';
+import { ListComponent } from 'app/routing/list.component';
+import { AddComponent } from 'app/routing/add.component';
+
+ 
+const appRoutes : Routes = [
+  { path: 'list', component: ListComponent },
+  { path: 'add', component: AddComponent },
+  { path: '',  component : ListComponent, pathMatch : 'full'}
+];
 
 
 @NgModule({
   declarations: [
-          ListBooksComponent,BookDetailsComponent,
-          LoginComponent, ReactiveLoginComponent, BooksComponent,
-          Books2Component, HttpGitComponent
-
-          
+        MainComponent, ListComponent, AddComponent
   ],
   imports: [
-    BrowserModule, HttpModule, FormsModule, ReactiveFormsModule
+    BrowserModule, HttpModule, FormsModule,
+            RouterModule.forRoot(appRoutes)
   ],
   providers: [],
-  bootstrap: [ HttpGitComponent ]
+  bootstrap: [MainComponent]
 })
 export class AppModule {
 

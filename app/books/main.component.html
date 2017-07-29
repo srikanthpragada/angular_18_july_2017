@@ -1,0 +1,10 @@
+<div style="background-color:lightgray">
+      <a  [routerLink]="['/home']">Home</a>
+      &nbsp;
+      <a  [routerLink]="['/add']">Add Book</a>
+      &nbsp;
+      <input type="text" #title placeholder="Title">
+      <button (click)="search(title.value)">Go</button>
+</div>
+
+<router-outlet></router-outlet>

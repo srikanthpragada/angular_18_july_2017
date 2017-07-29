@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from './Book';
+import { WebBook } from './webbook';
 import { BooksService } from './books.service';
-
 
 @Component({
     selector: 'st-books',
-    templateUrl: './books.component.html'
+    templateUrl: './books3.component.html'
 })
-export class Books2Component implements OnInit{
+export class Books3Component implements OnInit{
 
-    books: Book[];
+    books: WebBook[];
 
     constructor(private booksService: BooksService) {
     }
 
     ngOnInit() {
-         this.booksService.getBooks()
+         this.booksService.getWebBooks()
              .subscribe ( resp => this.books = resp);
     }
 
