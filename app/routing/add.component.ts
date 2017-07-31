@@ -4,7 +4,9 @@ import { Component, OnInit } from '@angular/core';
     templateUrl: './add.component.html'
 })
 export class AddComponent implements OnInit {
-    constructor() { }
+    constructor() { 
+        // localStorage.setItem("item","item Value");
+    }
 
     ngOnInit() { }
 }

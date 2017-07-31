@@ -1,1 +1,8 @@
-<h2>List Of Books </h2>
+<h1>List Of Books </h1>
+
+
+<a [routerLink]="['/details',idx]" 
+   *ngFor="let b of books; let idx = index">
+     <h4>{{ b.title}} </h4>
+</a>     
+   
